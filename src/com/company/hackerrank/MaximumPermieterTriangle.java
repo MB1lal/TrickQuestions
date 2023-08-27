@@ -36,29 +36,23 @@ import java.util.List;
  * Sample Case 1:
  * The triangle  is degenerate and thus can't be constructed, so we print -1 on a new line.
  */
-public class MaximumPermieterTriangle {
+public class MaximumPerimeterTriangle {
 
 
     public static List<Integer> maximizeTriangle(List<Integer> sticks) {
         Collections.sort(sticks);
+        List<Integer> validTriangles = new ArrayList<>();
 
-        List<Integer> triangles = new ArrayList<>();
-
-        for (int i = 0; i < sticks.size() - 2; i++) {
-            int ab = sticks.get(i) + sticks.get(i + 1);
-            int bc = sticks.get(i + 1) + sticks.get(i + 2);
-            int ca = sticks.get(i + 2) + sticks.get(i);
-            if (ab > sticks.get(i + 2) && bc > sticks.get(i) && ca > sticks.get(i + 1)) {
-                triangles.clear();
-                triangles.add(sticks.get(i));
-                triangles.add(sticks.get(i + 1));
-                triangles.add(sticks.get(i + 2));
+        for (int i = sticks.size() - 1; i > 1; i--) {
+            if (sticks.get(i) < sticks.get(i - 1) + sticks.get(i - 2)) {
+                validTriangles.add(sticks.get(i - 2));
+                validTriangles.add(sticks.get(i - 1));
+                validTriangles.add(sticks.get(i));
+                return validTriangles;
             }
         }
-        if (triangles.size() == 0) {
-            triangles.add(-1);
-        }
 
-        return triangles;
+        validTriangles.add(-1);
+        return validTriangles;
     }
 }
