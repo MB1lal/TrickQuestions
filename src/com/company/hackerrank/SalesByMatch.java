@@ -1,8 +1,8 @@
 package com.company.hackerrank;
 
-
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * There is a large pile of socks that must be paired by color. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
@@ -39,7 +39,7 @@ public class SalesByMatch {
     public static int sockMerchant(int n, List<Integer> ar) {
         // Write your code here
         int result = 0;
-        List<Integer> pairs = new ArrayList<>();
+        Set<Integer> pairs = new HashSet();
         for (Integer item : ar) {
             if(pairs.contains(item)) {
                 result ++;
