@@ -36,7 +36,7 @@ import java.util.List;
  * Sample Case 1:
  * The triangle  is degenerate and thus can't be constructed, so we print -1 on a new line.
  */
-public class MaximumPerimeterTriangle {
+public class MaximumPermieterTriangle {
 
 
     public static List<Integer> maximizeTriangle(List<Integer> sticks) {
