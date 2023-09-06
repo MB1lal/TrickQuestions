@@ -28,7 +28,7 @@ package com.company.hackerrank;
  */
 public class CaesarCipher {
 
-    private static String toLowerString(char c, int k) {
+    private static String shiftLowerCase(char c, int k) {
         for (int i=1; i<=k; i++) {
             char temp = (char)(1+c);
             if(temp > 'z') {
@@ -41,7 +41,7 @@ public class CaesarCipher {
 
     }
 
-    private static String toUpperString(char c, int k) {
+    private static String shiftUpperCase(char c, int k) {
         for (int i=1; i<=k; i++) {
             char temp = (char)(1+c);
             if(temp > 'Z') {
@@ -58,9 +58,9 @@ public class CaesarCipher {
         StringBuilder outputText = new StringBuilder();
         for (char c : inputText) {
             if(c>='a' && c<='z') {
-                outputText.append(toLowerString(c,k));
+                outputText.append(shiftLowerCase(c,k));
             } else if(c>='A' && c<='Z') {
-                outputText.append(toUpperString(c,k));
+                outputText.append(shiftUpperCase(c,k));
             } else {
                 outputText.append(c);
             }
