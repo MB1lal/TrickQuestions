@@ -23,10 +23,11 @@ public class SherlockAndArray {
     public static String balancedSums(List<Integer> arr) {
         AtomicInteger totalSum = new AtomicInteger();
         int leftSum = 0;
+        int rightSum;
 
-        arr.stream().forEach(x -> totalSum.addAndGet(x));
+        arr.forEach(totalSum::addAndGet);
         for (int i = 0; i < arr.size(); i++) {
-            int rightSum = totalSum.get() - leftSum - arr.get(i);
+            rightSum = totalSum.get() - leftSum - arr.get(i);
 
             if (leftSum == rightSum) {
                 return "YES";
