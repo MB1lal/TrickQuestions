@@ -1,3 +1,5 @@
+package com.company.hackerrank;
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -39,7 +41,7 @@ The answer will be .
 
 
 */
-class Result {
+class PickingNumbers {
 
     /*
      * Complete the 'pickingNumbers' function below.
